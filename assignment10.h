@@ -242,17 +242,17 @@ void transfer_money(int transfer , int receiver , unsigned int amount){
     printf("\n\n**************************\nTotalAmount:%u\n",total_amount_transmitter);
     printf("\n\n**************************\nTotalAmountForReceiver:%u\n",total_amount_receiver);
 
-    if( total_amount_transmitter>=trans_limit_transmitter){
+    if( total_amount_transmitter>trans_limit_transmitter){
         total_amount_transmitter=total_amount_transmitter-amount;
         printf("Exceeded Limit Amount!\n ");
-        printf("You can transfer amount for: %u\n",trans_limit_transmitter-total_amount_transmitter-1000);
+        printf("You can transfer amount for: %u\n",trans_limit_transmitter-total_amount_transmitter);
         userSector();
 
 
-    }else if(total_amount_receiver>=trans_limit_receiver){
+    }else if(total_amount_receiver>trans_limit_receiver){
         total_amount_receiver=total_amount_receiver-amount;
         printf("Your receiver exceeded Limit Amount!\n ");
-        printf("You can transfer amount for: %u\n",trans_limit_receiver-total_amount_receiver-1000);
+        printf("You can transfer amount for: %u\n",trans_limit_receiver-total_amount_receiver);
         userSector();
 
     }else{
